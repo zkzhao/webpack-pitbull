@@ -1,4 +1,4 @@
-# 前端项目架构文档
+# webpack-pitbull
 
 ## 使用说明
 - 安装node所需依赖

@@ -1,0 +1,98 @@
+html,body{width: 100%; height: 100%; background: #f3f3f3; color: #666; overflow-x: hidden;}
+html{font-size:  62.5%;}
+*{box-sizing: border-box;}
+ul,p,h1{margin:0;margin-bottom: 0;}
+.wapbg{width: 100%;overflow-x: hidden; height: 100%;}
+.zscolor{color: #3987ff;}
+.whcolor{ color: #fff !important;}
+.hscolor{color: #f00;}
+.error{ color:#f00;}
+a{
+text-decoration:none;
+}
+a:link{
+text-decoration:none;
+}
+a:visited{
+text-decoration:none;
+}
+a:hover{
+text-decoration:none;
+}
+a:active{
+text-decoration:none;
+}
+// index
+.g-all{
+  width: 100%; height: 100%;
+}
+//slider
+.g-silderct{
+  .slideBox{ position:relative; width:100%;  height:auto; overflow:hidden;}
+  .slideBox .hd{ position:absolute; height:28px; line-height:28px; bottom:0; right:0; width: 100%; z-index:1; }
+  .slideBox .hd ul{margin: 0 auto; width: 6rem;}
+  .slideBox .hd li{ display:inline-block; width:8px; height:8px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; background:#ccc; text-indent:-9999px; overflow:hidden; margin:0 6px;   }
+  .slideBox .hd li.on{ background:#fff;  }
+  .slideBox .bd{ position:relative; z-index:0; }
+  .slideBox .bd li{ position:relative;  }
+  .slideBox .bd li img{ width:100%;  height:auto; display:block;   }
+  .slideBox .bd li a{ -webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* 取消链接高亮 */ }
+  .slideBox .bd li .tit{ display:block; width:100%;  position:absolute; bottom:0; text-indent:10px; height:28px; line-height:28px; color:#fff;   }
+}
+.g-nav{
+  font-size: 1.4rem; color: #fff; background: #4768f3; height: 4rem; line-height: 4rem;  
+}
+.tabBox .hd{
+  margin-bottom: 1rem;
+    ul{display: flex;align-items:center;justify-content:space-around;}
+    a{ color: #333;font-size: 1.2rem;}
+    li{padding: 1rem 0; background: #fff; width: 33.3%; text-align: center; border-right: 1px solid #ddd;}
+    li:last-child{border-right: none;}
+    li.on a{ color: #4768f3;}
+  }
+.m-dkitem{
+  li{ background: #fff;padding:1.5rem 1rem; margin-bottom: 1rem;}
+  li>a{display: block;display: flex; color: #333; position: relative;}
+  li>a>i{display: block; position: absolute; right: 0; top:25%; font-size: 3rem; color: #aeaeae;}
+  .u-img{width: 4.7rem; height: 4.8rem; display: block; border-radius: 5px;}
+  .u-show{margin-left:1rem;}
+  .f-t1{font-size: 1.4rem;}
+  .f-t2{font-size: 1.2rem; color: #999; line-height: 2rem; padding-right: 2rem;}
+  .f-t3{font-size: 1.2rem; color: #999;}
+  .f-t3>span{ color: #f8394a;}
+}
+.m-dkshow{
+  background: url(../images/dkbg.jpg) no-repeat; width: 100%; height: auto; background-size: 100% 100%; color: #fff;
+  .f-t1>i{font-size: 3rem; color: #fff; margin-left: 1rem;}
+  .m-user>img{display: block; width: 5.5rem;height: 5.5rem; margin: 1rem auto; border-radius: 100%;}
+  .m-user{border-bottom: 1px solid #ddd;padding-bottom: 1rem;}
+  .m-sx{display: flex;justify-content:space-between;align-items:center; padding: 1rem;}
+  .m-sx>div{display: flex;align-items:center;justify-content:flex-start; width: 50%;}
+  .m-sx>div input{ width: 100px;}
+  .m-sx>div select{ width: 8rem; border-radius: 34px;}
+  .f-tt{display: block; width: 4rem;}
+  .f-wbse{border: none; background: transparent; outline: none;-webkit-appearance: none;}
+}
+.m-formct{
+  background: #fff; margin-top: 1rem;padding: 1rem;
+  .form-control{height: 40px;line-height: 40px;}
+  .m-tjan{background: #4768f3; color: #fff !important;display: block; width: 100%;padding: 1rem 0;}
+  .f-tip{font-size: 1rem; padding: .5rem 0; color: #999;}
+  .f-ott{ color: #3366ff; padding: 1rem 0;}
+  ul{margin-top: 1rem;}
+  li{float: left;margin-right: 1rem; width: 4.2rem; height: 4.2rem; margin-bottom: 1rem;}
+  li img{display: block; width: 100%;}
+  li>a{display: block; position: relative;}
+  .f-cc{ background: url(../images/gb.png) no-repeat; display: block; width: 1.5rem; height: 1.5rem; position: absolute; right: -7px; top: -7px; background-size: 100% 100%;}  
+}
+// 模态框
+.modal{
+  padding: 0 1rem;
+}
+.m-djeipt{
+  display: inline-block;height: 34px;padding: 6px 12px;ont-size: 14px; position: relative;line-height: 1.42857143;color: #555;background-color: #fff;background-image: none;border: 1px solid #ccc;border-radius: 34px;-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-sha;
+    >input{width: 60px !important;}
+    >span{color: #999;display:block; position: absolute; right: 5px; top: 5px; }
+}
+#getyzm{ background: #eee;}
