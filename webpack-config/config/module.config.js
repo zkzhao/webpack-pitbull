@@ -18,9 +18,9 @@ module.exports= {
         name: `${dirPath.css}/fonts/[name].[ext]`
       }
     },
-    // {
-    //   test: /\.html$/,
-    //   loader: 'html-loader'
-    // }
+    {
+      test: /\.html$/,
+      loader: 'html-loader'
+    }
   ]
 }
