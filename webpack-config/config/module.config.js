@@ -20,6 +20,7 @@ module.exports= {
     },
     {
       test: /\.html$/,
+      include: dirPath.srcDir,
       use:[{
         loader: 'html-loader',
         options: {
