@@ -20,7 +20,12 @@ module.exports= {
     },
     {
       test: /\.html$/,
-      loader: 'html-loader'
+      use:[{
+        loader: 'html-loader',
+        options: {
+          minimize: true
+        }
+      }]
     }
   ]
 }
