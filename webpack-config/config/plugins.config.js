@@ -32,7 +32,6 @@ htmlFiles.forEach((page)=>{
   configPlugins.push(
     new HtmlWebpackPlugin({
       filename: `${dirPath.distDir}/${basename}.html`,
-      //template: 'ejs-render-loader!'+path.resolve(dirPath.srcDir, `${basename}.html`),
       template: path.resolve(dirPath.srcDir, `${basename}.html`),
       chunks: [`${dirPath.js}/vendors`,basename]
     })
