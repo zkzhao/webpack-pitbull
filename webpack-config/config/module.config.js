@@ -27,6 +27,17 @@ module.exports= {
           minimize: true
         }
       }]
+    },
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      include: dirPath.srcDir,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['env']
+        }
+      }
     }
   ]
 }

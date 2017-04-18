@@ -1,7 +1,7 @@
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const webpack= require('webpack');
 const pluginsConfig= require('./plugins.config.js');
 
-pluginsConfig.push(new UglifyJSPlugin({
+pluginsConfig.push(new webpack.optimize.UglifyJsPlugin({
   compress: {
     warnings: false,
   },
