@@ -24,7 +24,8 @@ module.exports= {
       use:[{
         loader: 'html-loader',
         options: {
-          minimize: true
+          minimize: true,
+          interpolate: 'require' //用于模板插值
         }
       }]
     },
