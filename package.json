@@ -1,7 +1,7 @@
 {
-  "name": "daikuan",
+  "name": "webpack-pitbull",
   "version": "1.0.0",
-  "description": "贷款项目",
+  "description": "前端工程脚手架",
   "main": "index.js",
   "scripts": {
     "clean": "rm -r dist && mkdir dist",
