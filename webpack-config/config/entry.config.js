@@ -11,5 +11,4 @@ jsFiles.forEach((page)=>{
   configEntry[basename]= page;
 });
 
-
 module.exports= configEntry;

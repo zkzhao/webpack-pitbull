@@ -11,7 +11,7 @@ var configPlugins=[
     $: 'jquery',
     jQuery: 'jquery',
     'window.jQuery': 'jquery',
-    'window.$': 'jquery',
+    'window.$': 'jquery'
   }),
   // 提取公共模块
   new webpack.optimize.CommonsChunkPlugin({
