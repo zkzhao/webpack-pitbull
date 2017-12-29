@@ -37,5 +37,6 @@
 	│   │   └─resolve.config.js # 解析配置
 	│   ├─webpack.config.js # 生产环境的webpack配置文件
 	│   └─webpack.config.js # 开发环境的webpack配置文件
+	├─vue-build # 存放编译VUE的webpack配置文件
 	├─package.json
 	└─README.md # 说明文档
