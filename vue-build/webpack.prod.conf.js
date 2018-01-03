@@ -84,7 +84,7 @@ module.exports = merge(baseWebpackConfig, {
     }),
     // 单独使用link标签加载css并设置路径，相对于output配置中的publickPath
     new ExtractTextPlugin(`${dirPath.css}/[name].css`),
-    new webpack.HashedModuleIdsPlugin(),
+    // 作用域提升
     new webpack.optimize.ModuleConcatenationPlugin(),
     // 提取公共模块
     new webpack.optimize.CommonsChunkPlugin({
