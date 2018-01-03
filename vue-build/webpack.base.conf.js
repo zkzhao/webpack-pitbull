@@ -18,17 +18,7 @@ jsFiles.forEach((page) => {
 
 
 // 遍历 html template 模板文件
-var configPlugins = [
-  // 提取公共模块
-  new webpack.optimize.CommonsChunkPlugin({
-    name: `${dirPath.js}/vendors`,
-    filename: "[name]-bundle.js",
-    minChunks: 4
-  }),
-  // 单独使用link标签加载css并设置路径，相对于output配置中的publickPath
-  new ExtractTextPlugin(`${dirPath.css}/[name].css`)
-];
-
+var configPlugins = [];
 var htmlFiles = glob.sync(`${dirPath.srcDir}/*.html`);
 htmlFiles.forEach((page) => {
   let extname = path.extname(page);
@@ -38,6 +28,7 @@ htmlFiles.forEach((page) => {
     new HtmlWebpackPlugin({
       filename: `${dirPath.distDir}/${basename}.html`,
       template: path.resolve(dirPath.srcDir, `${basename}.html`),
+      inject: true,
       chunks: [`${dirPath.js}/vendors`, basename]
     })
   );
@@ -51,6 +42,15 @@ module.exports = {
     publicPath: '/',
     filename: `${dirPath.js}/[name].js`,
     chunkFilename: `${dirPath.js}/[id].bundle.js`
+  },
+
+  resolve: {
+    extensions: ['.js', '.vue' ,'json'],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': dirPath.srcDir,
+      'Utils': path.join(dirPath.srcJsDir, 'libs', 'Utils.js')
+    }
   },
 
   module: {
@@ -83,7 +83,6 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /node_modules/,
         include: dirPath.srcDir,
         use: {
           loader: 'babel-loader?cacheDirectory=true',
@@ -96,12 +95,5 @@ module.exports = {
     ]
   },
 
-  plugins: configPlugins,
-
-  resolve: {
-    extensions: ['.js', 'css', 'scss'],
-    alias: {
-      "Utils": path.join(dirPath.srcJsDir, 'libs', 'Utils.js')
-    }
-  },
+  plugins: configPlugins
 }

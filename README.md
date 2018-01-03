@@ -13,6 +13,12 @@
 - 生产环境编译
 `$ npm run prod`
 
+- Vue启动调试服务器
+`$ npm run vue`
+
+- Vue生产环境编译
+`$ npm run vuebuild`
+
 ## 目录结构说明
 	├─app # 开发环境代码、资源
 	│   ├─assets # 资产文件夹

@@ -14,7 +14,7 @@ DirPath.img= 'assets/images'; //app资产目录相对路径-图片
 DirPath.css= 'assets/styles'; //app资产目录相对路径-样式
 
 DirPath.serverProxy= {
-  "/api": "http://localhost:8888"
+  "/api": "192.168.10.1"
 }
 
 module.exports= DirPath;
