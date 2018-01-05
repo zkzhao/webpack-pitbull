@@ -2,7 +2,8 @@
   "name": "webpack-pitbull",
   "version": "1.1.0",
   "description": "前端工程脚手架",
-  "main": "index.js",
+  "author": "zkzhao",
+  "license": "ISC",
   "scripts": {
     "clean": "rm -r dist && mkdir dist",
     "dev": "webpack --progress --colors --config ./webpack-config/webpack.dev.config.js",
@@ -11,8 +12,6 @@
     "vue": "webpack-dev-server --inline --progress --config ./vue-build/webpack.dev.conf.js",
     "vuebuild": "webpack --progress --colors --config ./vue-build/webpack.prod.conf.js --bail"
   },
-  "author": "zkzhao",
-  "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -33,6 +32,7 @@
     "vue-loader": "^13.6.2",
     "vue-template-compiler": "^2.5.13",
     "webpack": "^3.10.0",
+    "webpack-bundle-analyzer": "^2.9.1",
     "webpack-dev-server": "^2.9.7",
     "webpack-merge": "^4.1.1"
   },

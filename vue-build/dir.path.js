@@ -2,7 +2,7 @@ const path= require('path');
 var DirPath= {};
 
 DirPath.rootDir= path.resolve(__dirname,'../'); //项目根目录
-DirPath.srcDir= path.resolve(DirPath.rootDir,'./app'); //开发环境目录
+DirPath.srcDir= path.resolve(DirPath.rootDir,'./vue-app'); //开发环境目录
 DirPath.distDir= path.resolve(DirPath.rootDir,'./dist'); //生产环境目录
 DirPath.srcAssetsDir= path.resolve(DirPath.srcDir,'./assets'); //开发环境资产目录
 DirPath.distAssetsDir= path.resolve(DirPath.distDir,'./assets'); //生产环境资产目录
@@ -16,5 +16,7 @@ DirPath.css= 'assets/styles'; //app资产目录相对路径-样式
 DirPath.serverProxy= {
   "/api": "192.168.10.1"
 }
+
+DirPath.bundleAnalyzerReport= true;
 
 module.exports= DirPath;

@@ -3,7 +3,6 @@ const path = require('path');
 const glob = require('glob');
 const webpack = require('webpack');
 const dirPath = require('./dir.path.js');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
@@ -17,24 +16,7 @@ jsFiles.forEach((page) => {
 });
 
 
-// 遍历 html template 模板文件
-var configPlugins = [];
-var htmlFiles = glob.sync(`${dirPath.srcDir}/*.html`);
-htmlFiles.forEach((page) => {
-  let extname = path.extname(page);
-  let basename = path.basename(page, extname);
-  // push进webpack.plugins
-  configPlugins.push(
-    new HtmlWebpackPlugin({
-      filename: `${dirPath.distDir}/${basename}.html`,
-      template: path.resolve(dirPath.srcDir, `${basename}.html`),
-      inject: true,
-      chunks: [`${dirPath.js}/vendors`, basename]
-    })
-  );
-});
-
-module.exports = {
+const webpackConfig = {
   entry: configEntry,
 
   output: {
@@ -95,5 +77,24 @@ module.exports = {
     ]
   },
 
-  plugins: configPlugins
+  plugins: []
 }
+
+
+// 遍历 html template 模板文件
+var htmlFiles = glob.sync(`${dirPath.srcDir}/*.html`);
+htmlFiles.forEach((page) => {
+  let extname = path.extname(page);
+  let basename = path.basename(page, extname);
+  // push进webpack.plugins
+  webpackConfig.plugins.push(
+    new HtmlWebpackPlugin({
+      filename: `${dirPath.distDir}/${basename}.html`,
+      template: path.resolve(dirPath.srcDir, `${basename}.html`),
+      inject: true,
+      chunks: [`${dirPath.js}/vendors`, basename],
+    })
+  );
+});
+
+module.exports = webpackConfig;

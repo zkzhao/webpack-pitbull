@@ -6,7 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const baseWebpackConfig = require('./webpack.base.conf');
 
-module.exports = merge(baseWebpackConfig, {
+const webpackConfig= merge(baseWebpackConfig, {
   module: {
     rules: [
       {
@@ -95,3 +95,10 @@ module.exports = merge(baseWebpackConfig, {
   ]
 });
 
+if (dirPath.bundleAnalyzerReport) {
+  // 分析打包后的文件大小以及依赖
+  const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+  webpackConfig.plugins.push(new BundleAnalyzerPlugin())
+}
+
+module.exports = webpackConfig;

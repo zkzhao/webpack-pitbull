@@ -1,5 +1,8 @@
 # webpack-pitbull
 
+## 更新说明
+v1.10 更新Vue框架支持
+
 ## 使用说明
 - 安装node所需依赖
 `$ npm install`
