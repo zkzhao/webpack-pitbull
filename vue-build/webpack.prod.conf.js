@@ -45,7 +45,7 @@ const webpackConfig= merge(baseWebpackConfig, {
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          fallback: "vue-style-loader",
+          fallback: "style-loader",
           use: [{
             loader: "css-loader",
             options: {
@@ -57,7 +57,7 @@ const webpackConfig= merge(baseWebpackConfig, {
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
-          fallback: 'vue-style-loader',
+          fallback: 'style-loader',
           use: [
             {
               loader: "css-loader",
