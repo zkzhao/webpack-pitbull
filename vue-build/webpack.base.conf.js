@@ -1,10 +1,7 @@
 'use strict'
 const path = require('path');
 const glob = require('glob');
-const webpack = require('webpack');
 const dirPath = require('./dir.path.js');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 
 var configEntry = {};
 //遍历入口js文件
@@ -16,7 +13,7 @@ jsFiles.forEach((page) => {
 });
 
 
-const webpackConfig = {
+module.exports = {
   entry: configEntry,
 
   output: {
@@ -43,14 +40,14 @@ const webpackConfig = {
         loader: 'url-loader',
         options: {
           limit: 8192,
-          name: `${dirPath.img}/[name].[ext]`
+          name: `${dirPath.img}/[name].[hash:7].[ext]`
         }
       },
       {
         test: /\.(woff|woff2|ttf|eot|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
         loader: 'file-loader',
         options: {
-          name: `${dirPath.css}/fonts/[name].[ext]`
+          name: `${dirPath.css}/fonts/[name].[hash:7].[ext]`
         }
       },
       {
@@ -75,26 +72,5 @@ const webpackConfig = {
         }
       }
     ]
-  },
-
-  plugins: []
+  }
 }
-
-
-// 遍历 html template 模板文件
-var htmlFiles = glob.sync(`${dirPath.srcDir}/*.html`);
-htmlFiles.forEach((page) => {
-  let extname = path.extname(page);
-  let basename = path.basename(page, extname);
-  // push进webpack.plugins
-  webpackConfig.plugins.push(
-    new HtmlWebpackPlugin({
-      filename: `${dirPath.distDir}/${basename}.html`,
-      template: path.resolve(dirPath.srcDir, `${basename}.html`),
-      inject: true,
-      chunks: [`${dirPath.js}/vendors`, basename],
-    })
-  );
-});
-
-module.exports = webpackConfig;
