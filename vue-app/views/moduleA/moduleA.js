@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
-import '../styles/base.css';
+import '@/assets/styles/base.css';
 import Vue from 'vue';
 import App from '@/components/Main.vue';
 import router from '@/router.js';

@@ -5,13 +5,12 @@ const dirPath = require('./dir.path.js');
 
 var configEntry = {};
 //遍历入口js文件
-const jsFiles = glob.sync(`${dirPath.srcJsDir}/*.js`);
+const jsFiles = glob.sync(`${dirPath.srcViewsDir}/**/*.js`);
 jsFiles.forEach((page) => {
   let extname = path.extname(page);
   let basename = path.basename(page, extname);
   configEntry[basename] = page;
 });
-
 
 module.exports = {
   entry: configEntry,
@@ -19,8 +18,7 @@ module.exports = {
   output: {
     path: dirPath.distDir,
     publicPath: '/',
-    filename: `${dirPath.js}/[name].[chunkhash].js`,
-    chunkFilename: `${dirPath.js}/[id].[chunkhash].js`
+    filename: `${dirPath.js}/[name].js`,
   },
 
   resolve: {

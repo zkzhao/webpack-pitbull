@@ -10,7 +10,8 @@
     "prod": "webpack --progress --colors --config ./webpack-config/webpack.config.js --bail",
     "start": "webpack-dev-server --config ./webpack-config/webpack.dev.config.js --open --hot --inline",
     "vue": "webpack-dev-server --inline --progress --config ./vue-build/webpack.dev.conf.js",
-    "vuebuild": "webpack --progress --colors --config ./vue-build/webpack.prod.conf.js --bail"
+    "vuebuild": "webpack --progress --colors --config ./vue-build/webpack.prod.conf.js --bail",
+    "vueb": "npm run clean && npm run vuebuild"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

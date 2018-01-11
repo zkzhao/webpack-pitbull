@@ -1,11 +1,14 @@
 'use strict'
+const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const dirPath = require('./dir.path.js');
+const glob = require('glob');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const baseWebpackConfig = require('./webpack.base.conf');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = merge(baseWebpackConfig,{
+const webpackConfig = merge(baseWebpackConfig,{
   module: {
     rules: [
       {
@@ -62,3 +65,20 @@ module.exports = merge(baseWebpackConfig,{
   }
 });
 
+// 遍历 html template 模板文件
+var htmlFiles = glob.sync(`${dirPath.srcViewsDir}/**/*.html`);
+htmlFiles.forEach((page) => {
+  let extname = path.extname(page);
+  let basename = path.basename(page, extname);
+  // push进webpack.plugins
+  webpackConfig.plugins.push(
+    new HtmlWebpackPlugin({
+      filename: `${basename}.html`,
+      template: path.resolve(dirPath.srcViewsDir, `${basename}/${basename}.html`),
+      inject: true,
+      chunks: [basename],
+    })
+  );
+});
+
+module.exports = webpackConfig;

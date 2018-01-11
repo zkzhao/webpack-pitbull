@@ -1,6 +1,7 @@
 'use strict'
 const path = require('path');
 const webpack = require('webpack');
+const glob = require('glob');
 const merge = require('webpack-merge');
 const dirPath = require('./dir.path.js');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -9,6 +10,10 @@ const baseWebpackConfig = require('./webpack.base.conf');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const webpackConfig= merge(baseWebpackConfig, {
+  output: {
+    filename: `${dirPath.js}/[name].[chunkhash].js`,
+    chunkFilename: `${dirPath.js}/[id].[chunkhash].js`
+  },
   module: {
     rules: [
       {
@@ -85,7 +90,10 @@ const webpackConfig= merge(baseWebpackConfig, {
       parallel: true
     }),
     // 单独使用link标签加载css并设置路径，相对于output配置中的publickPath
-    new ExtractTextPlugin(`${dirPath.css}/[name].css`),
+    new ExtractTextPlugin({
+      filename: `${dirPath.css}/[name].[contenthash].css`,
+      //allChunks: true,
+    }),
     new webpack.HashedModuleIdsPlugin(),
     // 作用域提升
     new webpack.optimize.ModuleConcatenationPlugin(),
@@ -111,8 +119,8 @@ const webpackConfig= merge(baseWebpackConfig, {
     }),
     // 提取公共模块
     new webpack.optimize.CommonsChunkPlugin({
-      //name: `${dirPath.js}/app`,
-      name: "app",
+      name: `${dirPath.js}/app`,
+      //name: "app",
       async: "vendor-async",
       children: true,
       minChunks: 3
@@ -127,7 +135,7 @@ if (dirPath.bundleAnalyzerReport) {
 }
 
 // 遍历 html template 模板文件
-var htmlFiles = glob.sync(`${dirPath.srcDir}/*.html`);
+var htmlFiles = glob.sync(`${dirPath.srcViewsDir}/**/*.html`);
 htmlFiles.forEach((page) => {
   let extname = path.extname(page);
   let basename = path.basename(page, extname);
@@ -135,9 +143,14 @@ htmlFiles.forEach((page) => {
   webpackConfig.plugins.push(
     new HtmlWebpackPlugin({
       filename: `${dirPath.distDir}/${basename}.html`,
-      template: path.resolve(dirPath.srcDir, `${basename}.html`),
+      template: path.resolve(dirPath.srcViewsDir, `${basename}/${basename}.html`),
       inject: true,
-      chunks: [`${dirPath.js}/vendors`, basename],
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
+      },
+      chunks: ['manifest', 'vendor', basename],
     })
   );
 });
