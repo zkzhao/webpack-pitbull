@@ -1,9 +1,8 @@
 const path= require('path');
 var DirPath= {};
-
-DirPath.rootDir= path.resolve(__dirname,'../../'); //项目根目录
-DirPath.srcDir= path.resolve(DirPath.rootDir,'./app'); //开发环境目录
-DirPath.distDir= path.resolve(DirPath.rootDir,'./dist'); //生产环境目录
+DirPath.rootDir= path.resolve(process.cwd()); //项目根目录
+DirPath.srcDir= path.resolve(DirPath.rootDir,'./Web/app'); //开发环境目录
+DirPath.distDir= path.resolve(DirPath.rootDir,'./Web/dist'); //生产环境目录
 DirPath.srcAssetsDir= path.resolve(DirPath.srcDir,'./assets'); //开发环境资产目录
 DirPath.distAssetsDir= path.resolve(DirPath.distDir,'./assets'); //生产环境资产目录
 DirPath.srcJsDir= path.resolve(DirPath.srcAssetsDir,'./scripts'); //开发环境脚本目录

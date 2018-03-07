@@ -1,7 +1,8 @@
-# webpack-pitbull
+# pitbull-webpack
 
 ## 更新说明
-v1.10 更新Vue框架支持
+v1.2 普通多页项目与Vue项目文件夹分离
+v1.1 更新Vue框架支持
 
 ## 使用说明
 - 安装node所需依赖
@@ -18,6 +19,7 @@ v1.10 更新Vue框架支持
 
 - Vue启动调试服务器
 `$ npm run vue`
+打开页面使用`http://localhost:8080/moduleA.html`
 
 - Vue生产环境编译
 `$ npm run vuebuild`
