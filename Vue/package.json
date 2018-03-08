@@ -1,0 +1,43 @@
+{
+  "name": "webpack-pitbull",
+  "version": "1.1.0",
+  "description": "前端工程脚手架",
+  "author": "zkzhao",
+  "license": "ISC",
+  "scripts": {
+    "clean": "rm -r dist && mkdir dist",
+    "vue": "webpack-dev-server --inline --progress --config ./webpack-config/webpack.dev.conf.js",
+    "vuebuild": "webpack --progress --colors --config ./webpack-config/webpack.prod.conf.js --bail",
+    "vueb": "npm run clean && npm run vuebuild"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "glob": "^7.1.2",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "uglifyjs-webpack-plugin": "^1.1.5",
+    "url-loader": "^0.6.2",
+    "vue-loader": "^13.6.2",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.10.0",
+    "webpack-bundle-analyzer": "^2.9.1",
+    "webpack-dev-server": "^2.9.7",
+    "webpack-merge": "^4.1.1"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "vue": "^2.5.13",
+    "vue-router": "^3.0.1"
+  }
+}
