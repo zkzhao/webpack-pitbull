@@ -1,0 +1,29 @@
+$titleSize: 20px;
+$mainSize: 16px;
+$subSize: 14px;
+
+$mainColor: rgba(0, 0, 0, 0.85);
+$subColor: rgba(0, 0, 0, 0.65);
+
+.card {
+  margin: 32px;
+}
+
+.cardContent {
+  span {
+    font-size: $mainSize;
+    color: $mainSize;
+  }
+
+  > div:global(.ant-row) {
+    margin: 16px 0;
+  }
+
+  .title {
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 10px;
+  }
+}

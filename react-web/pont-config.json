@@ -1,0 +1,11 @@
+{
+  "originUrl": "http://apidoc.t.iwubida.com/gen/v2/api-docs?serviceName=retail-assemble-merch",
+  "outDir": "./src/services",
+  "templatePath": "./apiTemplate",
+  "prettierConfig": {
+    "jsxSingleQuote": true,
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": false
+  }
+}

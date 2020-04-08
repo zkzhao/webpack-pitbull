@@ -1,0 +1,129 @@
+$subcolor: rgba(0, 0, 0, 0.45);
+$mainColor: rgba(87, 87, 87, 1);
+$mainSize: 16px;
+
+.pageWrapper {
+  padding: 20px 32px 24px 32px;
+  background-color: #fff;
+
+  .actionBar {
+    display: flex;
+    justify-content: space-between;
+
+    .btnGroup {
+      > button {
+        margin-right: 10px;
+      }
+
+      > button:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.orderListTable {
+  th {
+    // text-align: center !important;
+    font-size: $mainSize;
+    font-weight: 500;
+  }
+}
+
+.orderInfoContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  color: $subcolor;
+
+  .itemList {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.orderInfoContainerClose {
+  max-height: 66px; // 3倍行距
+  overflow: hidden;
+}
+
+.moreBtn {
+  cursor: pointer;
+  color: #17a1e6;
+}
+
+.row {
+  vertical-align: top; // 顶部对齐
+}
+
+// 单行省略
+.oneRowEllipse {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sellerName,
+.purchaseType {
+  font-size: $mainSize;
+  color: $mainColor;
+}
+
+.sellerType,
+.sellerCode,
+.date,
+.time,
+.paid,
+.waitForPay,
+.purchaseOffline {
+  color: $subcolor;
+  margin-top: 5px;
+}
+
+.purchaseOnline {
+  margin-top: 5px;
+  color: #1dd02c;
+}
+
+.shouldPay {
+  color: $mainColor;
+}
+
+.shouldPayCount {
+  font-size: $mainSize;
+  color: $mainColor;
+  font-weight: 600;
+}
+
+.waitForPayCount {
+  color: #e61717;
+}
+
+.orderStatusContainer {
+  > p {
+    color: $subcolor;
+    margin-top: 5px;
+  }
+
+  > p:first-child {
+    margin: 0;
+  }
+
+  .orderStatus,
+  .orderStatus > span {
+    color: $mainColor;
+    font-size: $mainSize;
+  }
+}
+
+.otherOpBtn {
+  margin-top: 20px;
+  font-size: $mainColor;
+  color: $subcolor;
+  text-align: center;
+}

@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin: 24px 0;
+}
+.orderCard {
+  flex: 1;
+  &:not(:last-child) {
+    margin-right: 24px;
+  }
+}
+
+:global {
+  .ant-card {
+    height: 100%;
+  }
+}

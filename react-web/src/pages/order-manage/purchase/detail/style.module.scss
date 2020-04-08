@@ -1,0 +1,48 @@
+.sectionBody {
+  padding: 24px;
+}
+
+:global {
+  .ant-tabs-nav {
+    .ant-tabs-tab {
+      text-align: center;
+      width: 121px;
+    }
+  }
+
+  .ant-tabs-ink-bar {
+    width: 121px;
+  }
+}
+
+.detailIcon:hover {
+  color: #17a1e6;
+}
+
+.specText {
+  color: #262626;
+  font-size: 28px;
+  line-height: 30px;
+}
+
+.redText {
+  color: #e62e2e;
+  font-size: 28px;
+  line-height: 39px;
+}
+
+.blueText {
+  color: #17a1e6;
+}
+
+.center {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.container {
+  :global(.ant-card-head) {
+    font-size: 22px;
+    line-height: 33px;
+  }
+}

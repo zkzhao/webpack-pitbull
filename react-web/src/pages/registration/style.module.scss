@@ -1,0 +1,71 @@
+// $mainColor: #17a1e6;
+
+.pageContainer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-image: url(./images/pic-bg-zhuce.png);
+  min-height: 720px;
+  background-attachment: fixed;
+}
+
+.formContainer {
+  width: 480px;
+  margin: auto;
+  // text-align: center;
+  padding-top: 97px;
+  .logo {
+    text-align: center;
+  }
+  .title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #121212;
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-top: 15px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .btnSubmit {
+    width: 100%;
+    // background-color: #17a1e6;
+  }
+  .vcode {
+    flex: 1;
+    text-align: right;
+    padding-right: 0;
+    // color: $mainColor;
+  }
+  // 重置样式
+  :global(.ant-btn-link[disabled]) {
+    color: rgba(0, 0, 0, 0.25);
+  }
+  .protocal {
+    padding-left: 0;
+    // color: $mainColor;
+  }
+  .login {
+    flex: 1;
+    text-align: right;
+    padding-right: 0;
+    // color: $mainColor;
+  }
+}
+
+.flexFormItem {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.copyright {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 24px;
+  text-align: center;
+  color: #c5d4da;
+}

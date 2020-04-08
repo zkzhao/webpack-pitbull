@@ -1,0 +1,27 @@
+.antSide {
+  width: 200px !important;
+  max-width: none !important;
+  min-width: auto !important;
+  height: 100%;
+  flex: 0 0 1 !important;
+  background-color: rgb(2, 27, 41);
+}
+.logo {
+  height: 64px;
+  width: 100%;
+  background-color: #002b40;
+}
+:global {
+  span {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .ant-menu-item {
+    height: 47px !important;
+    line-height: 47px !important;
+  }
+  .ant-menu-submenu-title {
+    height: 47px !important;
+    line-height: 47px !important;
+  }
+}

@@ -1,0 +1,19 @@
+@import '@/assets/styles';
+
+.descItemWrap {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+.descItemLabel {
+  font-size: 16px;
+  line-height: 30px;
+  width: 160px;
+  text-align: right;
+  color: $heading-color;
+  &::after {
+    content: '：';
+    position: relative;
+    display: inline-block;
+  }
+}

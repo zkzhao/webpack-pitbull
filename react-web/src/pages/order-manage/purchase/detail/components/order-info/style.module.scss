@@ -1,0 +1,42 @@
+.orderNumber {
+  margin-left: 16px;
+  font-size: 20px;
+  line-height: 28px;
+  color: #000;
+  vertical-align: middle;
+}
+.link {
+  color: #17a1e6;
+}
+.remarkTextRed {
+  margin-right: 13px;
+  color: #e61717;
+  // vertical-align: middle;
+}
+.editBtn {
+  border-radius: 4px;
+}
+.editStatusBtn {
+  @extend .editBtn;
+  margin-left: 8px;
+}
+.orderInfoWrap {
+  margin-left: 36px;
+  display: inline-block;
+  p {
+    color: 'rgba(0,0,0,0.45)';
+    font-size: 14px;
+    line-height: 22px;
+  }
+  span {
+    color: 'rgba(0,0,0,0.85)';
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+:global {
+  .ant-tabs-bar {
+    background-color: #fff;
+  }
+}

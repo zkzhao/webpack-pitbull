@@ -1,0 +1,24 @@
+.descItem {
+  display: flex;
+  align-items: flex-start;
+  padding: 1px 1px 16px 1px;
+  font-size: 19px;
+  line-height: 30px;
+}
+.descItemLabel {
+  color: rgba(0, 0, 0, 0.85);
+  &::after {
+    position: relative;
+    content: ':';
+    margin: 0 8px 0 2px;
+    top: -0.5px;
+  }
+}
+.descItemLabelRight {
+  @extend .descItemLabel;
+  text-align: right;
+}
+.descItemValue {
+  flex: 1;
+  color: rgba(0, 0, 0, 0.65);
+}

@@ -1,0 +1,30 @@
+.tableFooter {
+  text-align: right;
+  font-size: 14px;
+  line-height: 18px;
+}
+.tablePrice {
+  color: rgba(0, 0, 0, 0.25);
+  span {
+    text-decoration: line-through;
+  }
+}
+.tablePriceNow {
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  span {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+.lineThroughText {
+  font-size: 17px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.35);
+  text-decoration: line-through;
+}
+.normalText {
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  line-height: 25px;
+}
